@@ -3,23 +3,32 @@
 <head>
   <title>MyEMS</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="decoration/application.css">   
--->
-  <style></style>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <!-- Icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Vue -->
   <script defer src="vue/VueHeader.js"></script>
   <script defer src="vue/VueListePatient.js"></script>
   <script defer src="vue/VuePatient.js"></script>
+
+  <!-- DAO -->
   <script defer src="dao/PatientDAO.js"></script>
+
+  <!-- Modele -->
   <script defer src="modele/Patient.js"></script>
-  
-  <!--
-  <script src="js/liste.js" defer></script>
-  
-  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript#Script_loading_strategies
-  Scripts loaded using the defer attribute will run in the order they appear
-  in the page and execute them as soon as the script and content are downloaded
-  -->
+
+  <!-- Application -->
   <script defer src="Application.js"></script>
 
 </head>
@@ -27,26 +36,32 @@
   <div id="page-chargement-application">Chargement de l'application liste de patients</div>
 
   <script type="plain/text" id="html-vue-header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand">MyEMS</a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item ">
-                  <a class="nav-link" href="#">Liste de patients</a>
+    <header>
+      <nav>
+        <div class="nav-gauche">
+          <a href="#" class="logo">MyEMS</a>
+          <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+          <ul class="menu">
+              <li>
+                  <a href="#">
+                      <i class="fas fa-list"></i> Liste de patients
+                  </a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Ajouter un patient</a>
+              <li>
+                  <a href="#">
+                      <i class="fas fa-user-plus"></i> Ajouter un patient
+                  </a>
               </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-          </form>
-      </div>
+        </div>
+        <form class="search">
+            <input type="search" placeholder="Rechercher">
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
     </nav>
+  </header>
   </script>
 
   <script type="plain/text" id="html-vue-liste-patient">

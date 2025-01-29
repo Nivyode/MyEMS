@@ -40,4 +40,12 @@ class PatientDAO{
     chercher(id){
         return this.listePatient.find(patient => patient.getId() == id);
     }
+
+    ajouter(patient){
+
+    }
+
+    modifier(id, nouveauPatient){
+
+    }
 }
