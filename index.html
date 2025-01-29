@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>MyEMS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="decoration/application.css">   
+-->
+  <style></style>
+  <script defer src="vue/VueHeader.js"></script>
+  <script defer src="vue/VueListePatient.js"></script>
+  <script defer src="vue/VuePatient.js"></script>
+  <script defer src="dao/PatientDAO.js"></script>
+  <script defer src="modele/Patient.js"></script>
+  
+  <!--
+  <script src="js/liste.js" defer></script>
+  
+  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript#Script_loading_strategies
+  Scripts loaded using the defer attribute will run in the order they appear
+  in the page and execute them as soon as the script and content are downloaded
+  -->
+  <script defer src="Application.js"></script>
+
+</head>
+<body>
+  <div id="page-chargement-application">Chargement de l'application liste de patients</div>
+
+  <script type="plain/text" id="html-vue-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand">MyEMS</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item ">
+                  <a class="nav-link" href="#">Liste de patients</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Ajouter un patient</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+    </nav>
+  </script>
+
+  <script type="plain/text" id="html-vue-liste-patient">
+    <div class="page">
+
+    <br>
+    <button type="button" id="btn-lister-nom" class="btn btn-outline-primary">Nom</button>
+    <button type="button" id="btn-lister-prenom" class="btn btn-outline-primary">Prenom</button>
+    <button type="button" id="btn-lister-naissance" class="btn btn-outline-primary">Date de naissance</button>
+    <br>
+
+    
+      <h1>Liste des patients </h1>
+      <div id="liste-patients">
+        <br>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{patient.nom}</h5>
+                    <a href="#patient/{patient.id}" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </script>
+
+
+
+  <script type="plain/text" id="html-vue-patient">
+    <div class="page">
+
+      <h1>Patient</h1>
+
+      <main class="container">
+        <div class="bg-light p-5 rounded">
+          <h2 id="patient-nom-complet"></h2>
+
+          <p id="patient-naissence"></p>
+          <p id="patient-taille"></p>
+          <p id="patient-poids"></p>
+          <p id="patient-groupeSanguin"></p>
+          <p id="patient-maladieConnu"></p>
+          <p id="patient-origine"></p>
+          <p id="patient-yeux"></p>
+          <p id="patient-cheveux"></p>
+
+          <a class="btn btn-lg btn-primary action" href="#" role="button">Revenir &agrave; la liste</a>
+        </div>
+      </main>
+    </div>
+  </script>
+
+
+</body>
+</html>
