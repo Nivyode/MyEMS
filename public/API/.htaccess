@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_REFERER} !^https://myems.nivyode.com/ [NC]
+    RewriteRule ^.*$ - [F,L]
+</IfModule>
